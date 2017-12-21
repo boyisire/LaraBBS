@@ -10,6 +10,11 @@ use App\Handlers\ImageUploadHandler;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show']]);
+    }
+
     /**
      * 查看个人信息
      * @param User $user
@@ -27,6 +32,7 @@ class UsersController extends Controller
      */
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 
@@ -40,9 +46,12 @@ class UsersController extends Controller
      */
     public function update(UserRequest $request,  ImageUploadHandler $uploader, User $user)
     {
+        //授权
+        $this->authorize('update', $user);
+
         $data = $request->all();
         if ($request->avatar) {
-            $images_max_size = 362; 
+            $images_max_size = 362;
             $result = $uploader->save($request->avatar, 'avatars', $user->id, $images_max_size);
             if ($result) {
                 $data['avatar'] = $result['path'];
