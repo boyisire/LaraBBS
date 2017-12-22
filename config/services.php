@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'baidu_translate' => [
+        'url'   => env('BAIDU_TRANSLATE_URL','http://api.fanyi.baidu.com/api/trans/vip/translate?'),
+        'appid' => env('BAIDU_TRANSLATE_APPID'),
+        'key'   => env('BAIDU_TRANSLATE_KEY'),
+    ],
+
 ];
