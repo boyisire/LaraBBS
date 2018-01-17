@@ -47,10 +47,13 @@ return array(
             'topics',
             'replies',
         ],
-        '测试配置' => [
+        '测试测试' => [
             'categories',
             'topics',
             'replies',
+        ],
+        '站点管理' => [
+            'settings.site',
         ],
     ],
 
