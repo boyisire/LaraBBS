@@ -18,4 +18,11 @@ class UserObserver
     {
         //
     }
+
+    public function saving(User $user)
+    {
+        if (empty($user->avatar)){
+            $user->avatar = 'https://www.google.co.jp/images/branding/googlelogo/2x/googlelogo_color_120x44dp.png';;
+        }
+    }
 }
