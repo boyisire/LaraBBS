@@ -263,7 +263,7 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 #### 创建通知类
 `php artisan make:notification TopicReplied`
 
-#### Crontab 任务计划
+#### Crontab任务计划
 `php artisan schedule:run >> /dev/null 2>&1`
 
 #### 清空缓存
@@ -278,7 +278,7 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 ### Composer
 #### 使用 Composer 创建一个名为 LaraBBS 的应用
 `composer create-project laravel/laravel larabbs --prefer-dist "5.5.*"`
->其它详见[插件管理?](#插件管理)
+>其它详见[插件管理](#插件管理)
 
 ### Git
 #### 初始化仓库
@@ -299,7 +299,7 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 `git checkout .`
 #### 强制清理项目新增文件及文件夹
 `git clean -f -d `
-#### .gitignore 机制
+#### .gitignore机制
 >不想让某个文件夹中的文件提交git,添加`.gitignore` 文件处理.
 
 ```
@@ -337,10 +337,12 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 [mews/captcha](https://github.com/mewebstudio/captcha)
 >图片验证码功能
+
 >**安装:** `composer require "mews/captcha:~2.0"`
 
 [overtrue/laravel-lang ](https://github.com/overtrue/laravel-lang/)
 >多语言版本翻译
+
 >**安装:** `composer require "overtrue/laravel-lang:~3.0"`
 
 [Carbon](https://github.com/briannesbitt/Carbon)
@@ -358,8 +360,11 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 [ Laravel 5.x Scaffold Generator ](https://github.com/summerblue/generator)
 >代码生成器能让你通过执行一条 Artisan 命令，完成注册路由、新建模型、新建表单验证类、新建资源控制器以及所需视图文件等任务，不仅约束了项目开发的风格，还能极大地提高我们的开发效率。
+
 >**安装:** `composer require 'summerblue/generator:~0.5' --dev`
+
 >**操作:** `php artisan make:scaffold Topic --schema="title:string:index,body:text,user_id:integer:unsigned:index,category_id:integer:unsigned:index,reply_count:integer:unsigned:default(0),view_count:integer:unsigned:default(0),last_reply_user_id:integer:unsigned:default(0),order:integer:unsigned:default(0),excerpt:text,slug:string:nullable"`
+
 >**清单:**
 + 创建话题的数据库迁移文件 —— 2017_09_26_111713_create_topics_table.php；
 + 创建话题数据工厂文件 —— TopicFactory.php；
@@ -379,29 +384,36 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 [laravel-debugbar](https://github.com/barryvdh/laravel-debugbar)
 >**安装:** `composer require "barryvdh/laravel-debugbar:~3.1" --dev`
+
 >**配置:** `php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"`
 
 [导航栏组件](https://getbootstrap.com/docs/3.3/components/#navbar)
 >Bootstrap 框架的 导航栏组件,实现导航栏选中状态效果
+
 >**安装:** `composer require "hieu-le/active:~3.5"`
 
 [Simditor](http://simditor.tower.im/)
 >Simditor 是 tower.im 团队的开源编辑器
+
 >**下载:** [点击此处下载 Simditor](https://github.com/mycolorway/simditor/releases/download/v2.3.6/simditor-2.3.6.zip)
 
 [HTMLPurifier for Laravel](https://github.com/mewebstudio/Purifier)
 >HTMLPurifier 针对 Laravel 框架的一个封装,HTMLPurifier 本身就是一个独立的项目，运用『白名单机制』对 HTML 文本信息进行 XSS 过滤
+
 >**安装:** `composer require "mews/purifier:~2.0"`
+
 >**配置:** `php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"`
 
 [Guzzle](https://github.com/guzzle/guzzle)
 >Guzzle 库是一套强大的 PHP HTTP 请求套件
+
 >**安装:** `composer require "guzzlehttp/guzzle:~6.3"`
 
 [百度翻译](http://api.fanyi.baidu.com/api/trans/product/apidoc)
 
 [PinYin](https://github.com/overtrue/pinyin)
 >PinYin 是 安正超 开发的，基于 CC-CEDICT 词典的中文转拼音工具，是一套优质的汉字转拼音解决方案。
+
 >**安装:** `composer require "overtrue/pinyin:~3.0"`
 
 [Redis](https://github.com/nrk/predis)
@@ -411,14 +423,20 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 [Horizon](https://d.laravel-china.org/docs/5.5/horizon)
 >Horizon 是 Laravel 生态圈里的一员，为 Laravel Redis 队列提供了一个漂亮的仪表板，允许我们很方便地查看和管理 Redis 队列任务执行的情况。
+
 >**安装:** `composer require "laravel/horizon:~1.0"`
+
 >**配置:** `php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"`
+
 >**执行:** `php artisan horizon` (需要常驻运行)
 
 [Laravel-permission](https://github.com/spatie/laravel-permission)
 >实现的权限和角色的管理
+
 >**安装:** `composer require "spatie/laravel-permission:~2.7"`
+
 >**配置:** `php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"`
+
 >**数据表:**
 > + roles —— 角色的模型表；
 > + permissions —— 权限的模型表；
@@ -428,22 +446,27 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 [sudo-su](https://github.com/viacreative/sudo-su)
 >用户切换工具
+
 >**安装:** `composer require "viacreative/sudo-su:~1.1"`
+
 >**配置:** `php artisan vendor:publish --provider="VIACreative\SudoSu\ServiceProvider"`
 
 [Laravel Administrator](https://github.com/summerblue/administrator)
 >管理员后台
+
 >**安装:** `composer require "viacreative/sudo-su:~1.1"`
+
 >**配置:** `php artisan vendor:publish --provider="Frozennode\Administrator\AdministratorServiceProvider"`
 
 
 ## 扩展阅读
-IBM 文档库：跨站点脚本攻击深入解析 
+### IBM 文档库：跨站点脚本攻击深入解析 
 [跨站点脚本攻击深入解析](https://www.ibm.com/developerworks/cn/rational/08/0325_segal/)
-开发规范
+### 开发规范
 [ Laravel 项目开发规范](https://laravel-china.org/courses/laravel-specification){:target="_blank"}
 
 
 ## 名称解释
-[1]UGC:互联网术语，全称为User Generated Content，也就是用户生成内容的意思。UGC的概念最早起源于互联网领域，即用户将自己原创的内容通过互联网平台进行展示或者提供给其他用户。UGC是伴随着以提倡个性化为主要特点的Web2.0概念兴起的。
-[2]XSS:XSS攻击全称跨站脚本攻击，是为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS，XSS是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。
+[1] UGC:互联网术语，全称为User Generated Content，也就是用户生成内容的意思。UGC的概念最早起源于互联网领域，即用户将自己原创的内容通过互联网平台进行展示或者提供给其他用户。UGC是伴随着以提倡个性化为主要特点的Web2.0概念兴起的。
+
+[2] XSS:XSS攻击全称跨站脚本攻击，是为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS，XSS是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。
