@@ -143,7 +143,8 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 在使用代码生成器之前，我们需要先整理好 `topics` 表的字段名称和字段类型：
 ### 话题表「topics」
 
-| 字段名称 | 描述  | 字段类型 | 加索引缘由 | 其他 | 
+
+| 字段名称 | 描述  | 字段类型 | 加索引缘由 | 其他 |
 | -------- | -------- | -------- | -------- |
 | `title` |  帖子标题 | 字符串（String） | 文章搜索 | 无 |
 | `body` |  帖子内容 | 文本（text） | 不需要 | 无 |
@@ -156,9 +157,11 @@ Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]
 | `excerpt` |  文章摘要，SEO 优化时使用 | 文本（text） | 不需要 | 无  |
 | `slug` | SEO 友好的 URI |  字符串（String） | 不需要 |  `nullable()` |
 
+
 - `unsigned()` —— 设置不需要标识符（unsigned）
 - `default()` —— 为字段添加默认值。
 - `nullable()` —— 可为空
+
 
 .
 .
@@ -467,6 +470,6 @@ Mix 支持许多常见的 CSS 与 JavaScript 预处理器，通过简单的调�
 
 
 ## 名称解释
-[1] UGC:互联网术语，全称为User Generated Content，也就是用户生成内容的意思。UGC的概念最早起源于互联网领域，即用户将自己原创的内容通过互联网平台进行展示或者提供给其他用户。UGC是伴随着以提倡个性化为主要特点的Web2.0概念兴起的。
+**UGC:** 互联网术语，全称为User Generated Content，也就是用户生成内容的意思。UGC的概念最早起源于互联网领域，即用户将自己原创的内容通过互联网平台进行展示或者提供给其他用户。UGC是伴随着以提倡个性化为主要特点的Web2.0概念兴起的。
 
-[2] XSS:XSS攻击全称跨站脚本攻击，是为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS，XSS是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。
+**XSS:** XSS攻击全称跨站脚本攻击，是为不和层叠样式表(Cascading Style Sheets, CSS)的缩写混淆，故将跨站脚本攻击缩写为XSS，XSS是一种在web应用中的计算机安全漏洞，它允许恶意web用户将代码植入到提供给其它用户使用的页面中。
